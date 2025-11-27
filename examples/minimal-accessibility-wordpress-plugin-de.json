@@ -1,19 +1,17 @@
 {
   "specVersion": "1.0.0",
-  "language": "en",
-
+  "language": "de",
   "project": {
-    "name": "Example Project",
+    "name": "Beispielprojekt",
     "version": "1.0.0",
     "contact": {
-      "email": "accessibility@example.org"
+      "email": "barrierefreiheit@example.org"
     },
     "scope": {
       "coverage": "site",
       "legalBasis": ["WCAG 2.2"]
     }
   },
-
   "evaluation": {
     "standard": "WCAG",
     "version": "2.2",
@@ -21,7 +19,7 @@
     "issues": [
       {
         "criterion": "1.4.3",
-        "reason": "Insufficient text contrast in certain areas of the website."
+        "reason": "Kontrast einiger Texte ist unzureichend."
       }
     ]
   }

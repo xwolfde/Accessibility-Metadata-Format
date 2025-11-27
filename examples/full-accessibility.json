@@ -1,50 +1,50 @@
 {
   "specVersion": "1.0.0",
   "generatedAt": "2025-11-27T10:35:00Z",
-  "language": "de",
+  "language": "en",
 
   "project": {
-    "id": "rrze-example-theme",
-    "name": "RRZE Example Theme",
+    "id": "some-example-theme",
+    "name": "Example Theme",
     "type": "theme",
-    "description": "WordPress Theme RRZE Example.",
+    "description": "Responsive web theme designed for higher education websites.",
 
     "platform": "WordPress",
     "platformVersion": "6.8.1",
 
     "homepage": "https://example.org/example-theme",
-    "repository": "https://git.example.org/rrze/example-theme",
+    "repository": "https://git.example.org/team/example-theme",
     "license": "GPL-2.0-or-later",
     "version": "1.3.7",
     "lastChange": "2025-11-26",
 
     "contact": {
-      "organization": "Regionales Rechenzentrum",
-      "department": "Ausbildung & Information",
-      "person": "Wolfgang Wiese",
-      "email": "wolfgang.wiese@fau.de",
+      "organization": "Some Organization",
+      "department": "Webteam",
+      "person": "Accessibility Team",
+      "email": "accessibility@example.org",
       "phone": "",
-      "url": "https://www.rrze.de/faudir/wolfgang.wiese"
+      "url": "https://example.org/contact"
     },
 
     "scope": {
       "coverage": "templates",
       "includesContent": false,
-      "languages": ["de", "en"],
-      "jurisdiction": "EU-DE",
+      "languages": ["en", "de"],
+      "jurisdiction": "EU",
       "legalBasis": ["WCAG 2.2", "EN 301 549", "EAA"]
     },
 
     "roadmap": {
       "plannedImprovements": [
         {
-          "description": "Überarbeitung der Linkkontraste in Footer und Sidebar.",
+          "description": "Improve link contrast in the footer and sidebar.",
           "relatedCriteria": ["1.4.3"],
           "targetDate": "2026-03-31",
           "issueURL": "https://git.example.org/rrze/example-theme/issues/42"
         },
         {
-          "description": "Verbesserung der Tastaturnavigation im mobilen Menü.",
+          "description": "Enhance keyboard navigation in the mobile menu.",
           "relatedCriteria": ["2.1.1", "2.4.7"],
           "targetDate": "2026-02-15",
           "issueURL": "https://git.example.org/rrze/example-theme/issues/51"
@@ -76,14 +76,14 @@
           "tool": "axe-core",
           "version": "4.8.0",
           "date": "2025-11-25",
-          "sampleDescription": "Startseite, Standardseite, News, Kontaktformular"
+          "sampleDescription": "Homepage, standard page template, news overview, contact form."
         },
         {
           "type": "manual",
           "tool": "expertReview",
           "version": "1.0",
           "date": "2025-11-24",
-          "sampleDescription": "Navigationspfade, Suchergebnisse, Formulare"
+          "sampleDescription": "Navigation flows, search results, form interactions."
         }
       ]
     },
@@ -92,27 +92,27 @@
       {
         "criterion": "1.4.3",
         "level": "AA",
-        "reason": "Kontrastverhältnis einiger Textlinks im Footer unterschreitet 4.5:1.",
+        "reason": "The contrast ratio of some footer text links is below 4.5:1.",
         "alternatives": [
           {
-            "description": "Alternative PDF-Versionen mit hohem Kontrast für zentrale Informationsseiten.",
-            "url": "https://example.org/infos-barrierefrei-pdf"
+            "description": "A high-contrast PDF version of the central information is available.",
+            "url": "https://example.org/high-contrast-info.pdf"
           }
         ]
       },
       {
         "criterion": "2.1.1",
         "level": "A",
-        "reason": "Keyboard-Fokus in der mobilen Navigationsleiste teilweise nicht sichtbar.",
+        "reason": "The keyboard focus indicator is partially missing in the mobile navigation menu.",
         "alternatives": []
       }
     ],
 
     "limitations": [
       {
-        "area": "Download-Archiv vor 2018",
+        "area": "Document archive prior to 2018",
         "reason": "archivedContent",
-        "description": "Historische PDF-Dokumente sind nur teilweise barrierefrei.",
+        "description": "Legacy PDF documents may not be fully accessible.",
         "plannedFixDate": null
       }
     ]
