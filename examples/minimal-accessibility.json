@@ -1,0 +1,26 @@
+{
+  "specVersion": "1.0.0",
+  "language": "de",
+  "project": {
+    "name": "Beispielprojekt",
+    "version": "1.0.0",
+    "contact": {
+      "email": "barrierefreiheit@example.org"
+    },
+    "scope": {
+      "coverage": "site",
+      "legalBasis": ["WCAG 2.2"]
+    }
+  },
+  "evaluation": {
+    "standard": "WCAG",
+    "version": "2.2",
+    "conformance": "partially_conformant",
+    "issues": [
+      {
+        "criterion": "1.4.3",
+        "reason": "Kontrast einiger Texte ist unzureichend."
+      }
+    ]
+  }
+}

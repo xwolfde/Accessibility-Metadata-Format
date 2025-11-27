@@ -1,0 +1,370 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/accessibility-metadata-format-1.0.json",
+  "title": "Accessibility Metadata Format",
+  "description": "Maschinenlesbare Beschreibung der Barrierefreiheitsbewertung eines Webprojekts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["specVersion", "language", "project", "evaluation"],
+  "properties": {
+    "specVersion": {
+      "type": "string",
+      "description": "Versionsnummer dieses Metadatenformats (z.B. '1.0.0')."
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Zeitpunkt der Generierung dieses Reports (ISO 8601)."
+    },
+    "language": {
+      "type": "string",
+      "description": "Sprache des Reports als BCP47-Tag (z.B. 'de', 'en', 'de-DE').",
+      "pattern": "^[a-zA-Z]{2}(-[a-zA-Z0-9]+)*$"
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version",
+        "contact",
+        "scope"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Interne oder maschinenlesbare Projekt-ID (Slug, Paketname o.ä.)."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name des Projekts/Produkts (Theme, Template, Anwendung etc.)."
+        },
+        "type": {
+          "type": "string",
+          "description": "Art des Projekts (z.B. 'theme', 'plugin', 'designSystem', 'application', 'website')."
+        },
+        "description": {
+          "type": "string",
+          "description": "Kurzbeschreibung des Projekts."
+        },
+        "platform": {
+          "type": "string",
+          "description": "Grundlegende Plattform (z.B. 'WordPress', 'TYPO3', 'Custom', 'None')."
+        },
+        "platformVersion": {
+          "type": "string",
+          "description": "Versionsangabe der Plattform, falls relevant."
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri",
+          "description": "Projekt- oder Produktseite."
+        },
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "description": "Quellcode-Repository (z.B. GitHub/GitLab)."
+        },
+        "license": {
+          "type": "string",
+          "description": "Lizenzangabe, idealerweise SPDX-Identifier (z.B. 'GPL-2.0-or-later')."
+        },
+        "version": {
+          "type": "string",
+          "description": "Version des Projekts (SemVer oder andere)."
+        },
+        "lastChange": {
+          "type": "string",
+          "format": "date",
+          "description": "Datum der letzten Änderung am Projekt."
+        },
+        "contact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["email"],
+          "properties": {
+            "organization": {
+              "type": "string",
+              "description": "Name der Organisation."
+            },
+            "department": {
+              "type": "string",
+              "description": "Abteilung oder Bereich."
+            },
+            "person": {
+              "type": "string",
+              "description": "Kontaktperson oder Rolle (z.B. 'Team Barrierefreiheit')."
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "Kontakt-E-Mail-Adresse für Barrierefreiheitsthemen."
+            },
+            "phone": {
+              "type": "string",
+              "description": "Telefonnummer."
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "Kontakt- oder Supportseite."
+            }
+          }
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["coverage", "legalBasis"],
+          "properties": {
+            "coverage": {
+              "type": "string",
+              "description": "Grobe Abdeckung der Bewertung (z.B. 'templates', 'components', 'site', 'application')."
+            },
+            "includesContent": {
+              "type": "boolean",
+              "description": "Gibt an, ob die Bewertung auch konkrete Inhalte einschließt (true) oder nur Technik/Layout (false)."
+            },
+            "languages": {
+              "type": "array",
+              "description": "Sprachen, in denen das Projekt typischerweise angeboten wird.",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zA-Z]{2}(-[a-zA-Z0-9]+)*$"
+              }
+            },
+            "jurisdiction": {
+              "type": "string",
+              "description": "Rechtsraum, für den die Bewertung relevant ist (z.B. 'EU-DE', 'EU', 'US')."
+            },
+            "legalBasis": {
+              "type": "array",
+              "description": "Liste zugrunde liegender Normen/Gesetze (z.B. 'WCAG 2.2', 'EN 301 549').",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "roadmap": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["plannedImprovements"],
+          "properties": {
+            "plannedImprovements": {
+              "type": "array",
+              "description": "Geplante Verbesserungsmaßnahmen im Projektkontext.",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["description"],
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "description": "Beschreibung der geplanten Maßnahme."
+                  },
+                  "relatedCriteria": {
+                    "type": "array",
+                    "description": "Liste der betroffenen Kriterien (z.B. WCAG-Nummern).",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "targetDate": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Geplantes Fertigstellungsdatum der Maßnahme."
+                  },
+                  "issueURL": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL zu einem Issue-Tracker-Eintrag (z.B. GitHub/GitLab/Jira)."
+                  }
+                }
+              }
+            },
+            "nextAuditPlanned": {
+              "type": "string",
+              "format": "date",
+              "description": "Geplantes Datum der nächsten Accessibility-Prüfung."
+            }
+          }
+        }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standard", "version", "conformance", "issues"],
+      "properties": {
+        "standard": {
+          "type": "string",
+          "description": "Name des verwendeten Standards (z.B. 'WCAG', 'EN 301 549')."
+        },
+        "version": {
+          "type": "string",
+          "description": "Version des Standards (z.B. '2.2')."
+        },
+        "firstAudit": {
+          "type": "string",
+          "format": "date",
+          "description": "Datum der ersten Prüfung nach diesem Standard."
+        },
+        "lastAudit": {
+          "type": "string",
+          "format": "date",
+          "description": "Datum der letzten Prüfung."
+        },
+        "method": {
+          "type": "string",
+          "description": "Bewertungsmethode (z.B. 'selfAssessment', 'thirdParty', 'automated')."
+        },
+        "auditor": {
+          "type": "string",
+          "description": "Name/Bezeichnung des Prüfers oder Prüfteams."
+        },
+        "conformance": {
+          "type": "string",
+          "description": "Konformitätsstatus (z.B. 'fully_conformant', 'partially_conformant', 'not_conformant')."
+        },
+        "reportURL": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL zu einem ausführlichen Prüfbericht."
+        },
+        "tests": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["environment", "runs"],
+          "properties": {
+            "environment": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "os": {
+                  "type": "string",
+                  "description": "Verwendetes Betriebssystem für die Tests."
+                },
+                "browser": {
+                  "type": "string",
+                  "description": "Verwendeter Browser für die Tests."
+                },
+                "assistiveTech": {
+                  "type": "array",
+                  "description": "Eingesetzte assistive Technologien.",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "runs": {
+              "type": "array",
+              "description": "Einzelne Testläufe (manuell oder automatisiert).",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["type", "tool", "date"],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Art des Tests (z.B. 'automated', 'manual')."
+                  },
+                  "tool": {
+                    "type": "string",
+                    "description": "Name des eingesetzten Testwerkzeugs oder Ansatzes."
+                  },
+                  "version": {
+                    "type": "string",
+                    "description": "Version des Werkzeugs (falls relevant)."
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Datum des Testlaufs."
+                  },
+                  "sampleDescription": {
+                    "type": "string",
+                    "description": "Beschreibung des getesteten Umfangs (z.B. welche Seiten/Flows)."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "issues": {
+          "type": "array",
+          "description": "Liste identifizierter Barrieren/Probleme.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["criterion", "reason"],
+            "properties": {
+              "criterion": {
+                "type": "string",
+                "description": "Referenz auf das jeweilige Kriterium (z.B. WCAG-Nummer '1.4.3').",
+                "pattern": "^[0-9]+(\\.[0-9]+)+$"
+              },
+              "level": {
+                "type": "string",
+                "description": "Stufe des Kriteriums (z.B. 'A', 'AA', 'AAA')."
+              },
+              "reason": {
+                "type": "string",
+                "description": "Beschreibung, weshalb das Kriterium nicht erfüllt ist."
+              },
+              "alternatives": {
+                "type": "array",
+                "description": "Alternative Zugangsmöglichkeiten oder Hilfen für dieses konkrete Issue.",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["description"],
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "description": "Beschreibung der alternativen Lösung."
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL zu alternativen Inhalten oder Hilfsangeboten."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "description": "Bekannte Einschränkungen und Bereiche, die nicht oder nur eingeschränkt barrierefrei sind.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["area", "description"],
+            "properties": {
+              "area": {
+                "type": "string",
+                "description": "Betroffener Bereich (z.B. Archiv, bestimmte Anwendungsteile)."
+              },
+              "reason": {
+                "type": "string",
+                "description": "Grund für die Einschränkung (z.B. 'archivedContent', 'disproportionateBurden')."
+              },
+              "description": {
+                "type": "string",
+                "description": "Beschreibung der Einschränkung."
+              },
+              "plannedFixDate": {
+                "type": ["string", "null"],
+                "format": "date",
+                "description": "Geplantes Datum zur Behebung, falls vorgesehen, sonst null."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

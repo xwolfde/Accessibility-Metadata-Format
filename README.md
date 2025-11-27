@@ -16,7 +16,7 @@ Diese Reports sollen als Grundlage dienen, um auf den Webabgeboten die jeweils n
   Ausführliches Beispiel mit allen aktuell vorgesehenen Feldern.
 
 - `docs/specification-v1.md`  
-  Menschlich lesbare Spezifikation der Felder, Typen und Bedeutungen.
+  Spezifikation der Felder, Typen und Bedeutungen.
 
 ## Nutzung
 
