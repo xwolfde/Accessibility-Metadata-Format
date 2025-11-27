@@ -7,6 +7,13 @@
 
 The **Accessibility Metadata Format** is a machine-readable JSON standard for documenting the accessibility evaluation of web projects, themes, templates, component libraries, or standalone web applications.
 
+The goal of this format is to enable developers and vendors of products, plugins, themes, templates, and other components used in websites to provide a standardized statement about the accessibility of their work.
+The JSON-based report supplied through this format can then be used by website operators to complete their legally required accessibility statement. In practice, most website operators are not accessibility experts and therefore cannot reliably assess the technical accessibility of plugins, themes, or other third-party components.
+
+When a website uses multiple plugins or themes, the individual JSON files can be combined to generate an overall accessibility statement for the entire site. It is important to note, however, that these files can only represent the technical accessibility of the output generated or influenced by those components. They cannot assess or rate accessibility issues arising from editorial content or authoring practices.
+
+Evaluating the accessibility of the website’s content requires separate, dedicated testing procedures.
+
 This repository contains:
 
 - The official JSON Schema  
