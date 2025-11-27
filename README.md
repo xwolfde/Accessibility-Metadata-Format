@@ -1,5 +1,5 @@
-![Spec Version](https://img.shields.io/github/v/tag/xwolfde/accessibility-metadata-format?label=Spec&sort=semver)
-![Schema Version](https://img.shields.io/github/v/tag/xwolfde/accessibility-metadata-format?label=Schema&sort=semver)
+![Spec Version](https://img.shields.io/badge/Spec-1.0.0-blue)
+![Schema](https://img.shields.io/badge/JSON%20Schema-v1-blueviolet)
 ![License](https://img.shields.io/github/license/xwolfde/accessibility-metadata-format)
 ![Status](https://img.shields.io/badge/Status-Draft-orange)
 
