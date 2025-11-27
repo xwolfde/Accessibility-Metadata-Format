@@ -224,24 +224,6 @@ app.get('/.well-known/myapp-accessibility.json', function (req, res) {
 
 ---
 
-# Recommended Repository Structure
-
-```
-/
-├── accessibility.json
-├── README.md
-├── schema/
-│   └── v1/
-│       └── accessibility.schema.json
-├── docs/
-│   └── specification-v1.md
-│   └── getting-started.md
-└── examples/
-    ├── minimal-accessibility.json
-    └── full-accessibility.json
-```
-
----
 
 # Final Notes
 
