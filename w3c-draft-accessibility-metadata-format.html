@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Accessibility Metadata Format – W3C Community Group Draft</title>
+<style>
+body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 2em auto; padding: 0 1em; }
+code, pre { background: #f8f8f8; padding: 4px; }
+h1, h2, h3 { line-height: 1.3; }
+hr { margin: 2em 0; }
+</style>
+</head>
+<body>
+
+<h1>Accessibility Metadata Format</h1>
+<h2>W3C Community Group Draft</h2>
+
+<p><strong>Draft publication date:</strong> 2025-11-28</p>
+
+<p>
+This specification defines a machine-readable metadata format for accessibility
+evaluations of web projects, themes, templates, components, applications, and
+other digital products.  
+The format is intended to support interoperability between tools, simplify the
+creation of accessibility statements, and enable automated integration into
+content management systems and continuous integration workflows.
+</p>
+
+<hr>
+
+<h2>1. Introduction</h2>
+
+<p>
+Existing W3C technologies such as <strong>EARL</strong> (Evaluation and Report Language)
+and <strong>ACT Rules</strong> provide mechanisms for expressing accessibility test results and
+test procedures.  
+However, they do not define a <em>project-level</em> metadata structure for describing:
+</p>
+
+<ul>
+<li>project identity and versioning</li>
+<li>legal basis and jurisdiction</li>
+<li>audits and conformance summaries</li>
+<li>known issues</li>
+<li>planned improvements</li>
+<li>contact information</li>
+<li>links to accessibility statements</li>
+</ul>
+
+<p>
+The <strong>Accessibility Metadata Format</strong> fills this gap by defining a JSON vocabulary
+that represents the final evaluation state of a digital product.
+It is designed to complement EARL and ACT Rules, not to replace them.
+</p>
+
+<hr>
+
+<h2>2. Use Cases</h2>
+
+<ul>
+<li>Developers and agencies documenting the accessibility status of their themes,
+templates, apps, and plugins.</li>
+<li>Website operators and project managers evaluating whether a product meets
+their accessibility requirements.</li>
+<li>Web editors writing accessibility statements without performing full WCAG audits.</li>
+<li>Accessibility testers publishing results in a structured, machine-readable way.</li>
+<li>CMS plugins automatically generating JSON-LD, <code>accessibility.txt</code>, or accessibility statements.</li>
+</ul>
+
+<hr>
+
+<h2>3. Relationship to EARL and ACT Rules</h2>
+
+<p>
+This specification complements W3C technologies:
+</p>
+
+<h3>3.1 ACT Rules</h3>
+<p>
+ACT Rules define <em>how tests should be performed</em>.  
+They do not define report formats or project metadata.  
+Use ACT Rules to standardize the testing process.
+</p>
+
+<h3>3.2 EARL</h3>
+<p>
+EARL defines a framework for expressing <em>individual test assertions</em> in RDF.  
+It does not define conformance summaries, project details, or accessibility
+statements.  
+Use EARL to exchange raw test results.
+</p>
+
+<p>
+This document defines the <strong>project-level container</strong> for results derived from ACT
+tests, EARL assertions, manual evaluation, or hybrid audits.
+</p>
+
+<hr>
+
+<h2>4. The Accessibility Metadata Format</h2>
+
+<p>
+The format is expressed as JSON and formally defined in a JSON Schema.
+The top-level structure contains:
+</p>
+
+<ul>
+<li><code>specVersion</code> – Format version</li>
+<li><code>language</code> – Language of the report</li>
+<li><code>project</code> – Metadata about the evaluated product</li>
+<li><code>evaluation</code> – Details of the accessibility assessment</li>
+</ul>
+
+<p>
+A complete JSON Schema and example files are available in the corresponding repository.
+</p>
+
+<hr>
+
+<h2>5. Example (<code>accessibility.json</code>)</h2>
+
+<pre>{
+  "specVersion": "1.0.0",
+  "language": "en",
+  "project": {
+    "name": "Example Theme",
+    "version": "1.0.0",
+    "contact": {
+      "email": "accessibility@example.org"
+    },
+    "scope": {
+      "coverage": "templates",
+      "legalBasis": ["WCAG 2.2"]
+    }
+  },
+  "evaluation": {
+    "standard": "WCAG",
+    "version": "2.2",
+    "conformance": "partially_conformant",
+    "issues": [
+      {
+        "criterion": "1.4.3",
+        "reason": "Low text contrast in footer links."
+      }
+    ]
+  }
+}
+</pre>
+
+<hr>
+
+<h2>6. Generating JSON-LD for Schema.org</h2>
+
+<p>
+The metadata in <code>accessibility.json</code> can be used to automatically generate a
+Schema.org <code>WebSite</code> JSON-LD block using <code>accessibilitySummary</code>.
+</p>
+
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Example Theme Demo",
+  "url": "https://example.org/",
+  "inLanguage": "en",
+  "accessibilitySummary": "This website is partially conformant with WCAG 2.2..."
+}
+</pre>
+
+<p>
+See the full documentation on JSON-LD integration for details.
+</p>
+
+<hr>
+
+<h2>7. Generating <code>accessibility.txt</code></h2>
+
+<p>
+The format can also be used to generate a lightweight, human-readable
+<code>accessibility.txt</code> file as proposed by Bogdan Cerovac (2023).
+</p>
+
+<pre>
+Contact: mailto:accessibility@example.org
+Preferred-Languages: en, de
+WCAG-Conformance: partially conformant
+Last-Update: 2025-11-25
+Generated-From: accessibility.json
+</pre>
+
+<hr>
+
+<h2>8. Status of This Document</h2>
+
+<p>
+This is a <strong>W3C Community Group Draft</strong>.  
+It has no formal standing within W3C and does not imply endorsement by the W3C
+Membership.  
+It is published for review and discussion.
+</p>
+
+<hr>
+
+<h2>9. Conformance</h2>
+
+<p>
+This specification uses the keywords MUST, SHOULD, and MAY as defined in
+RFC 2119.  
+JSON documents conform when they match the normative JSON Schema.
+</p>
+
+<hr>
+
+<h2>10. Acknowledgments</h2>
+
+<p>
+This work was initiated by Wolfgang Wiese and contributors from the accessibility
+and web development communities.
+</p>
+
+</body>
+</html>
