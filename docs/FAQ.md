@@ -49,3 +49,97 @@ The text-based file is useful for quick human inspection, while the JSON file is
 the authoritative, machine-readable source.  
 We recommend generating `accessibility.txt` automatically from the JSON metadata
 to avoid inconsistencies.
+
+
+### How does this format relate to EARL?
+
+[EARL (Evaluation and Report Language)](https://www.w3.org/TR/EARL10-Schema/) is a W3C framework for expressing
+individual test results in a machine-readable way using RDF.  
+It is ideal for accessibility testing tools that need to exchange granular
+assertion-level data such as “criterion X passed/failed”.
+
+EARL should be used if:
+
+- you are building or integrating automated testing tools
+- you need to exchange atomic evaluation results
+- you want to represent results in RDF/linked-data ecosystems
+- you need maximum semantic precision at the assertion level
+
+EARL does **not** provide:
+project metadata, accessibility statements, conformance summaries, contact data,
+legal context, or human-friendly reporting.
+
+This format complements EARL by defining those missing parts.
+
+### How does this format relate to ACT Rules?
+
+[ACT Rules](https://www.w3.org/TR/act-rules-format/) define *how* accessibility tests must be structured and described,
+ensuring reproducibility across tools.  
+They are not a reporting format and they do not define JSON outputs.
+
+Use ACT Rules when:
+
+- you design or implement accessibility test procedures
+- you build automated testing tools
+- you need deterministic test behaviour
+
+ACT Rules do **not** define:
+project-level metadata, reporting structures, conformance summaries, or
+accessibility statement information.
+
+This format works alongside ACT Rules by providing a project-level metadata and
+report container.
+
+### Should I use EARL or this format?
+
+Use **EARL** if you need:
+- granular, assertion-level results  
+- interoperability between automated tools  
+- RDF/Linked Data compatibility  
+
+Use **this format** if you need:
+- a complete accessibility report  
+- metadata about the project, legal basis, contact, roadmap  
+- a source for accessibility statements  
+- easy JSON integration into CMS, CI pipelines, or websites  
+- human-readable and machine-readable reporting  
+
+They solve different problems and can be used together.
+
+
+### Should I use ACT Rules or this format?
+
+Use **ACT Rules** for:
+- defining how a test works  
+- standardising the testing procedure  
+- ensuring reproducibility between tools  
+
+Use **this format** for:
+- structuring and publishing the *results* of evaluations  
+- describing conformance status  
+- documenting issues and planned fixes  
+- referencing test environments and audits  
+
+
+### Can this format be used to generate Schema.org JSON-LD for accessibility?
+
+Yes.
+
+The `accessibility.json` file can be used as the single source of truth to
+generate Schema.org JSON-LD, typically using the `WebSite` type and its
+accessibility properties (`accessibilitySummary`, `accessibilityFeature`,
+`accessibilityHazard`, etc.).
+
+A common pattern is:
+
+- Use `project.name` and the site URL as `WebSite.name` and `WebSite.url`
+- Map `language` to `inLanguage`
+- Combine `evaluation.standard`, `evaluation.version`, `evaluation.conformance`,
+  `evaluation.lastAudit`, `evaluation.issues[]`, and `evaluation.reportURL` into
+  a human-readable `accessibilitySummary`
+- Optionally map known features/hazards to `accessibilityFeature` and
+  `accessibilityHazard` if such information is available
+
+This way, the JSON-LD on the website is always in sync with the underlying
+accessibility evaluation stored in `accessibility.json`.
+

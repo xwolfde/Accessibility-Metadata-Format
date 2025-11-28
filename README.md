@@ -88,6 +88,8 @@ This repository contains:
         ├── getting-started.md
         ├── generating-accessibility-txt.md
         ├── specification-v1.md
+        ├── mapping-to-earl.md
+        ├── schema-org-jsonld.md
         └── FAQ.md
 
 
@@ -115,6 +117,40 @@ The schema for version 1.0 is located at:
 ```
 schema/v1/accessibility.schema.json
 ```
+
+
+## Relation to W3C EARL and ACT Rules
+
+This project does not replace [EARL (Evaluation and Report Language)](https://www.w3.org/WAI/standards-guidelines/earl/) 
+or [ACT Rules](https://www.w3.org/TR/act-rules-format/).
+Instead, it fills a gap those W3C technologies intentionally leave open.
+
+**ACT Rules** define *how accessibility tests should be written*, including
+input conditions, testing procedures, and expected outcomes.  
+They do *not* define how accessibility reports should be stored, summarised, or
+distributed.
+
+**EARL** is a generic RDF-based framework to represent individual test
+assertions in a machine-readable way.  
+It is excellent for tools but it does not define:
+
+- project metadata
+- conformance summaries
+- contact information
+- legal bases
+- accessibility statements
+- roadmaps or planned fixes
+- human-oriented reporting
+
+The Accessibility Metadata Format complements both technologies by providing the
+*project-level metadata* and *high-level reporting structure* that ACT and EARL
+do not cover.  
+In short:
+
+- **ACT defines how to test**  
+- **EARL defines raw test results**  
+- **This format defines the complete accessibility report and project metadata**  
+
 
 ## Validation
 
