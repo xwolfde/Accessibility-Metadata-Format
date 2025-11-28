@@ -7,7 +7,7 @@
 
 A machine-readable JSON format to describe the accessibility evaluation
 status of web projects, themes, templates, components, applications, or
-other digital products.\
+other digital products.
 This format enables developers, auditors, and organizations to document
 and share accessibility-related information in a consistent and
 structured way.

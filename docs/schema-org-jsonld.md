@@ -14,7 +14,7 @@ The `accessibility.json` file provides a structured source of truth for
 accessibility evaluations. JSON-LD should typically be **derived** from this
 file, not maintained separately.
 
----
+
 
 ## 1. Basic Mapping to `WebSite`
 
@@ -40,7 +40,7 @@ From `accessibility.json` the following fields are typically mapped:
 - optionally `project.version` → `version`
 - optionally `project.lastChange` → `dateModified`
 
----
+
 
 ## 2. Building `accessibilitySummary` from `accessibility.json`
 
@@ -63,7 +63,7 @@ Example logic:
 - If `evaluation.conformance = "partially_conformant"`:  
   > "This website is partially conformant with WCAG 2.2. The last audit was performed on 2025-11-25. Known issues include low contrast for some footer links and partially missing visible keyboard focus in the mobile navigation. A detailed accessibility statement is available at https://example.org/accessibility-statement."
 
----
+
 
 ## 3. Example: Full JSON-LD Snippet Derived from `accessibility.json`
 
@@ -87,7 +87,7 @@ Example logic:
 </script>
 ```
 
----
+
 
 ## 4. Using `accessibilityFeature` and `accessibilityHazard`
 
@@ -109,7 +109,7 @@ Examples:
 ]
 ```
 
----
+
 
 ## 5. Recommended Workflow
 
