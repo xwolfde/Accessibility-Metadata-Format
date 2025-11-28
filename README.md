@@ -10,16 +10,18 @@ The **Accessibility Metadata Format** is a machine-readable JSON standard for do
 The goal of this format is to enable developers and vendors of products, plugins, themes, templates, and other components used in websites to provide a standardized statement about the accessibility of their work.
 The JSON-based report supplied through this format can then be used by website operators to complete their legally required accessibility statement. In practice, most website operators are not accessibility experts and therefore cannot reliably assess the technical accessibility of plugins, themes, or other third-party components.
 
-When a website uses multiple plugins or themes, the individual JSON files can be combined to generate an overall accessibility statement for the entire site. It is important to note, however, that these files can only represent the technical accessibility of the output generated or influenced by those components. They cannot assess or rate accessibility issues arising from editorial content or authoring practices.
+When a website uses multiple plugins or themes, the individual JSON files can be combined to create a general accessibility statement for the entire site. However, it's important to note that these files can only represent the technical accessibility of the results generated or influenced by these components. They cannot assess accessibility issues that may arise from editorial work.
 
-Evaluating the accessibility of the website’s content requires separate, dedicated testing procedures.
+For a complete website test that also examines the results of editorial work, a proper test according to WCAG or other recognized testing standards is necessary.
 
 This repository contains:
 
-- The official JSON Schema  
-- Full and minimal example files  
-- Human-readable specification  
-- Optional CI validation workflows
+- [The official JSON Schema](schema/v1/accessibility.schema.json)  
+- [Human-readable specification](docs/specification-v1.md)  
+- [Developer documentation](docs/getting-startet.md)
+- [Frequently asked questions.](FAQ.md)
+- Example files  
+Frequently Asked Questions.
 
 ---
 
@@ -40,6 +42,12 @@ The format is system-agnostic and can be used with:
 - Frontend frameworks (React, Vue, Svelte, etc.)  
 - Backend-driven applications  
 - Standalone design systems and component libraries  
+
+---
+
+## Further Information
+
+See the [FAQ](FAQ.md) for additional details.
 
 ---
 
@@ -159,6 +167,20 @@ Pull requests and proposals for improvements to the format, schema, or documenta
 Please ensure changes remain backwards-compatible within a major version and include updated examples where required.
 
 ---
+
+
+# Author
+
+**Wolfgang Wiese**  
+Web Accessibility Specialist, Regional Computing Center (RRZE)  
+Friedrich-Alexander-Universität Erlangen-Nürnberg  
+GitHub: [@xwolfde](https://github.com/xwolfde)
+Bluesky: [@xwolf.de](https://bsky.app/profile/xwolf.de) 
+Contact: <wolfgang.wiese@fau.de>
+
+> Opinions expressed in this project are my own and do not necessarily represent the views of the university.
+
+
 
 ## Contact
 

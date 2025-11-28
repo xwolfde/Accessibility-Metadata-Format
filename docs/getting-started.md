@@ -96,32 +96,6 @@ Document:
 
 ---
 
-## 6. Validate the File
-
-Use AJV:
-
-```bash
-ajv validate   -s schema/v1/accessibility.schema.json   -d accessibility.json
-```
-
-Or Python:
-
-```python
-from jsonschema import validate
-import json
-
-with open("schema/v1/accessibility.schema.json") as f:
-    schema = json.load(f)
-
-with open("accessibility.json") as f:
-    data = json.load(f)
-
-validate(instance=data, schema=schema)
-```
-
-Include validation in CI for each release.
-
----
 
 # CMS-Specific Guides
 
@@ -221,6 +195,34 @@ app.get('/.well-known/myapp-accessibility.json', function (req, res) {
 ```
 
 3. Validate via CI and update with every deployment.
+
+---
+
+
+## Validate the File
+
+Use AJV:
+
+```bash
+ajv validate   -s schema/v1/accessibility.schema.json   -d accessibility.json
+```
+
+Or Python:
+
+```python
+from jsonschema import validate
+import json
+
+with open("schema/v1/accessibility.schema.json") as f:
+    schema = json.load(f)
+
+with open("accessibility.json") as f:
+    data = json.load(f)
+
+validate(instance=data, schema=schema)
+```
+
+Include validation in CI for each release.
 
 ---
 
