@@ -21,29 +21,6 @@ The format is defined using a JSON Schema and aims to support:
 -   easier creation of accessibility statements
 
 
-
-## Specification
-
-The formal definition is provided as a JSON Schema:
-
-    schema/v1/accessibility.schema.json
-
-This schema describes the full structure of the `accessibility.json`
-metadata file, including:
-
--   Project information\
--   Contact details\
--   Scope of evaluation\
--   Applied accessibility standard (WCAG, EN 301 549, etc.)\
--   Conformance status\
--   Known issues\
--   Limitations\
--   Planned improvements\
--   Test environment\
--   Audit metadata
-
-
-
 ## Purpose
 
 
@@ -62,6 +39,26 @@ The format is system-agnostic and can be used with:
 - Backend-driven applications  
 - Standalone design systems and component libraries  
 
+
+## Specification
+
+The formal definition is provided as a JSON Schema:
+
+    schema/v1/accessibility.schema.json
+
+This schema describes the full structure of the `accessibility.json`
+metadata file, including:
+
+-   Project information
+-   Contact details
+-   Scope of evaluation
+-   Applied accessibility standard (WCAG, EN 301 549, etc.)
+-   Conformance status
+-   Known issues
+-   Limitations
+-   Planned improvements
+-   Test environment
+-   Audit metadata
 
 
 ## Documentation
@@ -108,7 +105,7 @@ accessibility.json
 This file SHOULD be placed in the project root and MAY also be served at:
 
 ```
-/.well-known/accessibility.json
+/.well-known/<projectname-prefix>-accessibility.json
 ```
 
 ### The JSON Schema
