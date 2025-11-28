@@ -38,3 +38,14 @@ Partial audits simply include fewer issues and may be labelled as `partially_con
 ### Is the file intended for public access?
 It can be public or private.  
 Public placement (e.g. in `.well-known`) helps automated tools, scanners, and providers.
+
+### Can this project generate an `accessibility.txt` file?
+
+Yes.  
+The `accessibility.json` file contains all the structured information needed to
+create an optional `accessibility.txt` file as proposed by [Bogdan Cerovac](https://cerovac.com/a11y/2023/07/accessibility-txt-a-proposed-standard-which-allows-websites-to-define-accessibility-policies/) in 2023.
+
+The text-based file is useful for quick human inspection, while the JSON file is
+the authoritative, machine-readable source.  
+We recommend generating `accessibility.txt` automatically from the JSON metadata
+to avoid inconsistencies.

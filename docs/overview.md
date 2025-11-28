@@ -4,6 +4,8 @@ This folder contains the full developer documentation.
 
 - [Specification V1](specification-v1.md)
 - [Getting Startet](getting-startet.de)
+- [Generating an `accessibility.txt` File (Optional)](generating-acessibility-txt.md)
+- [FAQ](FAQ.md)
 
 ## Examples
 

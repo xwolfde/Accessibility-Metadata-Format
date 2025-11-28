@@ -5,7 +5,47 @@
 
 # Accessibility Metadata Format
 
-The **Accessibility Metadata Format** is a machine-readable JSON standard for documenting the accessibility evaluation of web projects, themes, templates, component libraries, or standalone web applications.
+A machine-readable JSON format to describe the accessibility evaluation
+status of web projects, themes, templates, components, applications, or
+other digital products.\
+This format enables developers, auditors, and organizations to document
+and share accessibility-related information in a consistent and
+structured way.
+
+The format is defined using a JSON Schema and aims to support:
+
+-   automated generation of accessibility documentation
+-   integration into CI/CD pipelines
+-   CMS plugin consumption
+-   transparency for users and project managers
+-   easier creation of accessibility statements
+
+
+
+## Specification
+
+The formal definition is provided as a JSON Schema:
+
+    schema/v1/accessibility.schema.json
+
+This schema describes the full structure of the `accessibility.json`
+metadata file, including:
+
+-   Project information\
+-   Contact details\
+-   Scope of evaluation\
+-   Applied accessibility standard (WCAG, EN 301 549, etc.)\
+-   Conformance status\
+-   Known issues\
+-   Limitations\
+-   Planned improvements\
+-   Test environment\
+-   Audit metadata
+
+
+
+## Purpose
+
 
 The goal of this format is to enable developers and vendors of products, plugins, themes, templates, and other components used in websites to provide a standardized statement about the accessibility of their work.
 The JSON-based report supplied through this format can then be used by website operators to complete their legally required accessibility statement. In practice, most website operators are not accessibility experts and therefore cannot reliably assess the technical accessibility of plugins, themes, or other third-party components.
@@ -13,27 +53,6 @@ The JSON-based report supplied through this format can then be used by website o
 When a website uses multiple plugins or themes, the individual JSON files can be combined to create a general accessibility statement for the entire site. However, it's important to note that these files can only represent the technical accessibility of the results generated or influenced by these components. They cannot assess accessibility issues that may arise from editorial work.
 
 For a complete website test that also examines the results of editorial work, a proper test according to WCAG or other recognized testing standards is necessary.
-
-This repository contains:
-
-- [The official JSON Schema](schema/v1/accessibility.schema.json)  
-- [Human-readable specification](docs/specification-v1.md)  
-- [Developer documentation](docs/getting-startet.md)
-- [Frequently asked questions.](FAQ.md)
-- Example files  
-Frequently Asked Questions.
-
----
-
-## Purpose
-
-This format enables:
-
-- **Automated generation of accessibility statements**  
-- **Consistent documentation of WCAG/EN 301 549 compliance**  
-- **Machine-readable accessibility metadata for CMS/plugins/tools**  
-- **Improved transparency for third-party themes and components**  
-- **Integration into CI/CD pipelines to ensure ongoing compliance**
 
 The format is system-agnostic and can be used with:
 
@@ -43,13 +62,38 @@ The format is system-agnostic and can be used with:
 - Backend-driven applications  
 - Standalone design systems and component libraries  
 
----
 
-## Further Information
 
-See the [FAQ](FAQ.md) for additional details.
+## Documentation
 
----
+This repository contains:
+
+- [The official JSON Schema](schema/v1/accessibility.schema.json)  
+- [Human-readable specification](docs/specification-v1.md)  
+- [Developer documentation](docs/getting-startet.md)
+- [Generating an `accessibility.txt` File (Optional)](docs/generating-acessibility-txt.md)
+- [Frequently asked questions](docs/FAQ.md)
+- Example files  
+
+### Folder Structure
+
+    accessibility-metadata-format/
+    ├── README.md
+    ├── LICENSE
+    ├── schema/
+    │   └── v1/
+    │       └── accessibility.schema.json
+    ├── examples/
+    │   ├── minimal-accessibility.json
+    │   └── full-accessibility.json
+    └── docs/
+        ├── overview.md
+        ├── getting-started.md
+        ├── generating-accessibility-txt.md
+        ├── specification-v1.md
+        └── FAQ.md
+
+
 
 ## File Structure
 
@@ -75,104 +119,34 @@ The schema for version 1.0 is located at:
 schema/v1/accessibility.schema.json
 ```
 
-### Documentation
+## Validation
 
-The full formal specification is located at:
+Any standard JSON Schema validator can be used:
 
-```
-docs/specification-v1.md
-```
+-   ajv-cli\
+-   python-jsonschema\
+-   VS Code JSON Schema integration\
+-   GitHub Actions (example workflow included)
 
-### Example Files
 
-This repository contains:
-
-```
-examples/minimal-accessibility.json
-examples/full-accessibility.json
-```
-
----
-
-## Repository Structure
-
-```
-accessibility-metadata-format/
-├── README.md
-├── LICENSE
-├── schema/
-│   └── v1/
-│       └── accessibility.schema.json
-├── docs/
-│   └── specification-v1.md
-└── examples/
-    ├── minimal-accessibility.json
-    └── full-accessibility.json
-```
-
----
-
-## Usage
-
-### Validate an accessibility.json file using AJV
-
-```bash
-ajv validate   -s schema/v1/accessibility.schema.json   -d accessibility.json
-```
-
-### Validate using Python
-
-```python
-from jsonschema import validate
-import json
-
-with open("schema/v1/accessibility.schema.json") as f:
-    schema = json.load(f)
-
-with open("accessibility.json") as f:
-    data = json.load(f)
-
-validate(instance=data, schema=schema)
-```
-
----
-
-## Versioning
-
-The metadata format follows semantic versioning for its **schema**:
-
-- **MAJOR**: Breaking changes  
-- **MINOR**: Backwards-compatible additions  
-- **PATCH**: Corrections or clarifications  
-
-Each major version is stored under its own directory:
-
-```
-schema/v1/
-schema/v2/
-...
-```
-
----
 
 ## License
 
 Depending on your repository policy, this project may be published under  **CC BY 4.0** 
 
----
+
 
 ## Contributing
 
 Pull requests and proposals for improvements to the format, schema, or documentation are welcome.  
 Please ensure changes remain backwards-compatible within a major version and include updated examples where required.
 
----
 
 
-# Author
+## Author
 
 **Wolfgang Wiese**  
-Web Accessibility Specialist, Regional Computing Center (RRZE)  
+Head of Web Development & Digital Accessibility, Regional Computing Center (RRZE)  
 Friedrich-Alexander-Universität Erlangen-Nürnberg  
 GitHub: [@xwolfde](https://github.com/xwolfde)
 Bluesky: [@xwolf.de](https://bsky.app/profile/xwolf.de) 
