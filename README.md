@@ -158,9 +158,9 @@ In short:
 
 Any standard JSON Schema validator can be used:
 
--   ajv-cli\
--   python-jsonschema\
--   VS Code JSON Schema integration\
+-   ajv-cli
+-   python-jsonschema
+-   VS Code JSON Schema integration
 -   GitHub Actions (example workflow included)
 
 
