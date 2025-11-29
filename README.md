@@ -65,9 +65,9 @@ metadata file, including:
 
 This repository contains:
 
+- [Getting started](docs/getting-started.md)
 - [The official JSON Schema](schema/v1/accessibility.schema.json)  
 - [Human-readable specification](docs/specification-v1.md)  
-- [Developer documentation](docs/getting-startet.md)
 - [Generating an `accessibility.txt` File (Optional)](docs/generating-acessibility-txt.md)
 - [Mapping to EARL](docs/mapping-to-earl.md)
 - [Schema.org JSON-LD](docs/schema-org-jsonld.md)
