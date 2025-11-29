@@ -5,41 +5,50 @@
 ### Developers and digital agencies
 They can document the accessibility status of their software components and products.  
 It helps communicate compliance levels and known issues transparently.
+As a web developer and agency developing an entire web relaunch, you can use the accessibility.json to 
+keep track of the status of the individual components.
 
 ### Website owners, project managers, and hosting providers
-They can evaluate the accessibility quality of components before deployment.  
-The metadata file makes it easier to identify risks, compliance gaps, and upcoming fixes.
+They can evaluate the accessibility quality of components before installation, deployment or purchase.  
+Using the accessibility.json file, you can compare plugins, themes, and other components with others before 
+installation when searching for and selecting them, and thus make a selection based on the results.
+When a new component (e.g., a WordPress plugin) is added to an existing website, the accessibility statement 
+applicable to the entire website can be easily added to the accessibility.json file of the new component, 
+without having to re-evaluate the entire website.
+Furthermore, when searching for and selecting new components, one is not limited to nonspecific statements 
+such as "Accessibility ready", but can use the accessibility.json file to check which standard accessibility 
+was measured according to and which level of conformance was achieved.
 
 ### Web editors and content managers
 They often have to maintain accessibility statements without performing technical WCAG audits.  
-The metadata format provides technical audit results in a clear and structured way.
+The metadata format provides technical audit results in a clear and structured way for the components they use in their website. 
+With this the web editor can put all component statments together to create the accessibility statement for the whole site.
 
 ### Accessibility testers and auditors
 They can store and publish results in a consistent standard, reuse them in automated workflows, and reduce manual documentation effort.
 
-## Additional questions
 
-### Does this replace an accessibility statement?
+## Does this replace an accessibility statement?
 No.  
 It provides machine-readable data *used to generate* an accessibility statement.
 
-### Does the presence of this file guarantee compliance?
+## Does the presence of this file guarantee compliance?
 No.  
 It documents the current evaluation status.
 
-### Can this file be generated automatically?
+## Can this file be generated automatically?
 Yes.  
 Any testing tool or CI pipeline can generate or update it as long as it follows the schema.
 
-### Can it store partial audits?
+## Can it store partial audits?
 Yes.  
 Partial audits simply include fewer issues and may be labelled as `partially_conformant`.
 
-### Is the file intended for public access?
+## Is the file intended for public access?
 It can be public or private.  
 Public placement (e.g. in `.well-known`) helps automated tools, scanners, and providers.
 
-### Can this project generate an `accessibility.txt` file?
+## Can this project generate an `accessibility.txt` file?
 
 Yes.  
 The `accessibility.json` file contains all the structured information needed to
@@ -51,7 +60,7 @@ We recommend generating `accessibility.txt` automatically from the JSON metadata
 to avoid inconsistencies.
 
 
-### How does this format relate to EARL?
+## How does this format relate to EARL?
 
 [EARL (Evaluation and Report Language)](https://www.w3.org/TR/EARL10-Schema/) is a W3C framework for expressing
 individual test results in a machine-readable way using RDF.  
@@ -71,7 +80,7 @@ legal context, or human-friendly reporting.
 
 This format complements EARL by defining those missing parts.
 
-### How does this format relate to ACT Rules?
+## How does this format relate to ACT Rules?
 
 [ACT Rules](https://www.w3.org/TR/act-rules-format/) define *how* accessibility tests must be structured and described,
 ensuring reproducibility across tools.  
@@ -90,7 +99,7 @@ accessibility statement information.
 This format works alongside ACT Rules by providing a project-level metadata and
 report container.
 
-### Should I use EARL or this format?
+## Should I use EARL or this format?
 
 Use **EARL** if you need:
 - granular, assertion-level results  
@@ -107,7 +116,7 @@ Use **this format** if you need:
 They solve different problems and can be used together.
 
 
-### Should I use ACT Rules or this format?
+## Should I use ACT Rules or this format?
 
 Use **ACT Rules** for:
 - defining how a test works  
@@ -121,7 +130,7 @@ Use **this format** for:
 - referencing test environments and audits  
 
 
-### Can this format be used to generate Schema.org JSON-LD for accessibility?
+## Can this format be used to generate Schema.org JSON-LD for accessibility?
 
 Yes.
 
