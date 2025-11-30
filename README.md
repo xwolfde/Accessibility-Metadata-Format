@@ -90,31 +90,7 @@ metadata file, including:
 -   Test environment
 -   Audit metadata
 
-
-## File Structure
-
-### The accessibility report
-
-A project should provide an accessibility metadata file named:
-
-```
-accessibility.json
-```
-
-This file SHOULD be placed in the project root and MAY also be served at:
-
-```
-/.well-known/<projectname-prefix>-accessibility.json
-```
-
-### The JSON Schema
-
-The schema for version 1.0 is located at:
-
-```
-schema/v1/accessibility.schema.json
-```
-
+Details see [Accessibility Metadata Format — Specification v1.0](docs/specification-v1.md)
 
 ## Relation to W3C EARL and ACT Rules
 
