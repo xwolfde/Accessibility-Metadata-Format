@@ -201,6 +201,12 @@ Please ensure changes remain backwards-compatible within a major version and inc
 **Wolfgang Wiese**  
 Head of Web Development & Digital Accessibility, Regional Computing Center (RRZE)  
 Friedrich-Alexander-Universität Erlangen-Nürnberg  
+GitHub: [@xwolfde](https://github.com/xwolfde)
+Bluesky: [@xwolf.de](https://bsky.app/profile/xwolf.de) 
+Contact: <wolfgang.wiese@fau.de>
+
+[![Bluesky](https://img.shields.io/badge/Bluesky-@xwolf.de?logo=bluesky)](https://bsky.app/profile/xwolf.de)  
+[![Email](https://img.shields.io/badge/Email-xwolf@xwolf.de-000000?logo=email)](mailto:xwolf@xwolf.de)
 
 [![GitHub](https://img.shields.io/badge/GitHub-xwolfde?logo=github)](https://github.com/xwolfde)  
 [![Bluesky](https://img.shields.io/badge/Bluesky-@xwolf.de?logo=bluesky)](https://bsky.app/profile/username)  
