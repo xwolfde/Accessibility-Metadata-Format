@@ -63,14 +63,14 @@ When a website uses multiple plugins or themes, the individual JSON files can be
 
 This repository contains some more details and examples:
 
+- [Accessibility Metadata Format — Specification v1.0](docs/specification-v1.md)  
 - [Getting started](docs/getting-started.md)
-- [The official JSON Schema](schema/v1/accessibility.schema.json)  
-- [Human-readable specification](docs/specification-v1.md)  
+- [The JSON Schema](schema/v1/accessibility.schema.json)  
 - [Generating an `accessibility.txt` File (Optional)](docs/generating-acessibility-txt.md)
 - [Mapping to EARL](docs/mapping-to-earl.md)
 - [Schema.org JSON-LD](docs/schema-org-jsonld.md)
 - [Frequently asked questions](docs/FAQ.md)
-- Example files  
+- [Example files](examples/) 
 
 ## Specification
 
