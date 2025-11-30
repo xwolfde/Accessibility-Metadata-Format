@@ -55,9 +55,7 @@ By seeing this info website operators would combine this with other components' 
 
 ## Specification
 
-The formal definition is provided as a JSON Schema:
-
-    [schema/v1/accessibility.schema.json](schema/v1/accessibility.schema.json)
+The formal definition is provided as a JSON Schema [schema/v1/accessibility.schema.json](schema/v1/accessibility.schema.json)
 
 This schema describes the full structure of the `accessibility.json`
 metadata file, including:
