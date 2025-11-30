@@ -4,6 +4,9 @@ Version: **1.0.0**
 Status: **Draft / Public Proposal**  
 Authors: *Wolfgang Wiese, University of Erlangen–Nuremberg*  
 
+
+
+
 ---
 
 ## 1. Introduction
@@ -36,7 +39,7 @@ accessibility.json
 The file SHOULD be placed in the project root and MAY additionally be exposed via:
 
 ```text
-/.well-known/accessibility.json
+/.well-known/<projectname-prefix>-accessibility.json
 ```
 
 This allows both local tooling (reading from the project directory) and remote tooling (crawlers, automated checkers) to access the file in a predictable way.
