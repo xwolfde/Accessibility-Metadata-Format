@@ -1,14 +1,18 @@
 {
   "specVersion": "1.0.0",
-  "language": "de",
+  "language": "en",
   "project": {
-    "name": "Beispielprojekt",
+    "name": "Feed Widget Plugin",
     "version": "1.0.0",
+    "type": "plugin",
+    "platform": "WordPress",
+    "platformVersion": "6.5",
     "contact": {
-      "email": "barrierefreiheit@example.org"
+      "email": "support@example.org"
     },
     "scope": {
-      "coverage": "site",
+      "coverage": "feed functionality",
+      "includesContent": false,
       "legalBasis": ["WCAG 2.2"]
     }
   },
@@ -19,7 +23,8 @@
     "issues": [
       {
         "criterion": "1.4.3",
-        "reason": "Kontrast einiger Texte ist unzureichend."
+        "level": "AA",
+        "reason": "Text size contrast fails AA requirements in feed items"
       }
     ]
   }
