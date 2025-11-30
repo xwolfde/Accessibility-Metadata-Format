@@ -9,14 +9,15 @@ This folder contains the full developer documentation.
 - [Schema.org JSON-LD](schema-org-jsonld.md)
 - [FAQ](FAQ.md)
 
+
 ## Examples
 
 - [Full Example in JSON](../examples/full-accessibility.json)
 - [Minimal Example in JSON](../examples/minimal-accessibility.json)
 
+---
 
-
-### Folder Structure for this repo
+## Folder Structure for this repo
 
     accessibility-metadata-format/
     ├── README.md
