@@ -1,13 +1,5 @@
 # FAQ – Accessibility Metadata Format
 
-## What its the purpose?
-The goal of this format is to enable developers and vendors of products, plugins, themes, templates, and other components used in websites to provide a standardized statement about the accessibility of their work.
-The JSON-based report supplied through this format can then be used by website operators to complete their legally required accessibility statement. In practice, most website operators are not accessibility experts and therefore cannot reliably assess the technical accessibility of plugins, themes, or other third-party components.
-
-When a website uses multiple plugins or themes, the individual JSON files can be combined to create a general accessibility statement for the entire site. However, it's important to note that these files can only represent the technical accessibility of the results generated or influenced by these components. They cannot assess accessibility issues that may arise from editorial work.
-
-For a complete website test that also examines the results of editorial work, a proper test according to WCAG or other recognized testing standards is necessary.
-
 ## Where can I use it?
 The format is system-agnostic and can be used with:
 
