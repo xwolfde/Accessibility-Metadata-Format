@@ -44,6 +44,9 @@ The file SHOULD be placed in the project root and MAY additionally be exposed vi
 
 This allows both local tooling (reading from the project directory) and remote tooling (crawlers, automated checkers) to access the file in a predictable way.
 
+> Please note: The filename /.well-known/accessibility.json should not be used by plugins, themes, or other components. Due to its generic format, this filename should always be reserved for a report for the entire website. Therefore, the project prefix should always be used for components.
+
+
 ---
 
 ## 3. Top-Level Structure
