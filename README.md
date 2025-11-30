@@ -5,7 +5,7 @@
 
 # Accessibility Metadata Format
 
-A machine-readable JSON format to document the accessibility status of web components (themes, plugins, components, etc.).
+A machine-readable JSON format to document the accessibility status of web components (themes, plugins, templates, blocks, etc.).
 
 Purpose: Developers and agencies provide standardized metadata for their work; website operators use it for legally required accessibility statements.
 
@@ -55,7 +55,8 @@ The JSON-based report supplied through this format can then be used by website o
 
 When a website uses multiple plugins or themes, the individual JSON files can be combined to create a general accessibility statement for the entire site. 
 
-> However, it's important to note that these files can only represent the technical accessibility of the results generated or influenced by these components. They cannot assess accessibility issues that may arise from editorial work.
+> Please notice:
+> It's important to note that these files can only represent the technical accessibility of the results generated or influenced by these components. Especially they cannot assess accessibility issues that may arise from editorial work.
 > For a complete website test that also examines the results of editorial work, a proper test according to WCAG or other recognized testing standards is necessary.
 
 
