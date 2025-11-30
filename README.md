@@ -205,13 +205,6 @@ GitHub: [@xwolfde](https://github.com/xwolfde)
 Bluesky: [@xwolf.de](https://bsky.app/profile/xwolf.de) 
 Contact: <wolfgang.wiese@fau.de>
 
-[![Bluesky](https://img.shields.io/badge/Bluesky-@xwolf.de?logo=bluesky)](https://bsky.app/profile/xwolf.de)  
-[![Email](https://img.shields.io/badge/Email-xwolf@xwolf.de-000000?logo=email)](mailto:xwolf@xwolf.de)
-
-[![GitHub](https://img.shields.io/badge/GitHub-xwolfde?logo=github)](https://github.com/xwolfde)  
-[![Bluesky](https://img.shields.io/badge/Bluesky-@xwolf.de?logo=bluesky)](https://bsky.app/profile/username)  
-[![Email](https://img.shields.io/badge/Email-xwolf@xwolf.de?logo=email)](mailto:xwolf@xwolf.de)
-
 > Opinions expressed in this project are my own and do not necessarily represent the views of the university.
 
 
