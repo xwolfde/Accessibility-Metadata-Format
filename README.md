@@ -12,7 +12,7 @@ Purpose: Developers and agencies provide standardized metadata for their work; w
 
 ## Example
 
-The following example shows a sample accessibility.json file for a WordPress Plugin with a small issue:
+The following example shows a sample accessibility.json file for a WordPress Plugin with an issue:
 
 ```json
 {
