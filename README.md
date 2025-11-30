@@ -59,6 +59,18 @@ When a website uses multiple plugins or themes, the individual JSON files can be
 > For a complete website test that also examines the results of editorial work, a proper test according to WCAG or other recognized testing standards is necessary.
 
 
+## Documentation
+
+This repository contains some more details and examples:
+
+- [Getting started](docs/getting-started.md)
+- [The official JSON Schema](schema/v1/accessibility.schema.json)  
+- [Human-readable specification](docs/specification-v1.md)  
+- [Generating an `accessibility.txt` File (Optional)](docs/generating-acessibility-txt.md)
+- [Mapping to EARL](docs/mapping-to-earl.md)
+- [Schema.org JSON-LD](docs/schema-org-jsonld.md)
+- [Frequently asked questions](docs/FAQ.md)
+- Example files  
 
 ## Specification
 
@@ -77,41 +89,6 @@ metadata file, including:
 -   Planned improvements
 -   Test environment
 -   Audit metadata
-
-
-## Documentation
-
-This repository contains:
-
-- [Getting started](docs/getting-started.md)
-- [The official JSON Schema](schema/v1/accessibility.schema.json)  
-- [Human-readable specification](docs/specification-v1.md)  
-- [Generating an `accessibility.txt` File (Optional)](docs/generating-acessibility-txt.md)
-- [Mapping to EARL](docs/mapping-to-earl.md)
-- [Schema.org JSON-LD](docs/schema-org-jsonld.md)
-- [Frequently asked questions](docs/FAQ.md)
-- Example files  
-
-### Folder Structure
-
-    accessibility-metadata-format/
-    ├── README.md
-    ├── LICENSE
-    ├── schema/
-    │   └── v1/
-    │       └── accessibility.schema.json
-    ├── examples/
-    │   ├── minimal-accessibility.json
-    │   └── full-accessibility.json
-    └── docs/
-        ├── overview.md
-        ├── getting-started.md
-        ├── generating-accessibility-txt.md
-        ├── specification-v1.md
-        ├── mapping-to-earl.md
-        ├── schema-org-jsonld.md
-        └── FAQ.md
-
 
 
 ## File Structure
