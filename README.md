@@ -121,9 +121,9 @@ The Accessibility Metadata Format complements both technologies by providing the
 do not cover.  
 In short:
 
-- **ACT defines how to test**  
+- **ACT defines how to test a complete website**  
 - **EARL defines raw test results**  
-- **This format defines the complete accessibility report and project metadata**  
+- **This format defines the accessibility status for components of a website**  
 
 
 ## Validation
