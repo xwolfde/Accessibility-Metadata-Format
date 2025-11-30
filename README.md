@@ -6,6 +6,7 @@
 # Accessibility Metadata Format
 
 A machine-readable JSON format to document the accessibility status of web components (themes, plugins, components, etc.).
+
 Purpose: Developers and agencies provide standardized metadata for their work; website operators use it for legally required accessibility statements.
 
 
