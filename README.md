@@ -5,46 +5,59 @@
 
 # Accessibility Metadata Format
 
-A machine-readable JSON format to describe the accessibility evaluation
-status of web projects, themes, templates, components, applications, or
-other digital products.
-This format enables developers, auditors, and organizations to document
-and share accessibility-related information in a consistent and
-structured way.
-
-The format is defined using a JSON Schema and aims to support:
-
--   automated generation of accessibility documentation
--   integration into CI/CD pipelines
--   CMS plugin consumption
--   transparency for users and project managers
--   easier creation of accessibility statements
+A machine-readable JSON format to document the accessibility status of web components (themes, plugins, components, etc.).
+Purpose: Developers and agencies provide standardized metadata for their work; website operators use it for legally required accessibility statements.
 
 
-## Purpose
+## Example
 
+The following example shows a sample accessibility.json file, which would residue in the plugins folder:
 
-The goal of this format is to enable developers and vendors of products, plugins, themes, templates, and other components used in websites to provide a standardized statement about the accessibility of their work.
-The JSON-based report supplied through this format can then be used by website operators to complete their legally required accessibility statement. In practice, most website operators are not accessibility experts and therefore cannot reliably assess the technical accessibility of plugins, themes, or other third-party components.
+```json
+{
+  "specVersion": "1.0.0",
+  "language": "en",
+  "project": {
+    "name": "Feed Widget Plugin",
+    "version": "1.0.0",
+    "type": "plugin",
+    "platform": "WordPress",
+    "platformVersion": "6.5",
+    "contact": {
+      "email": "support@example.org"
+    },
+    "scope": {
+      "coverage": "feed functionality",
+      "includesContent": false,
+      "legalBasis": ["WCAG 2.2"]
+    }
+  },
+  "evaluation": {
+    "standard": "WCAG",
+    "version": "2.2",
+    "conformance": "partially_conformant",
+    "issues": [
+      {
+        "criterion": "1.4.3",
+        "level": "AA",
+        "reason": "Text size contrast fails AA requirements in feed items"
+      }
+    ]
+  }
+}
 
-When a website uses multiple plugins or themes, the individual JSON files can be combined to create a general accessibility statement for the entire site. However, it's important to note that these files can only represent the technical accessibility of the results generated or influenced by these components. They cannot assess accessibility issues that may arise from editorial work.
+```
 
-For a complete website test that also examines the results of editorial work, a proper test according to WCAG or other recognized testing standards is necessary.
-
-The format is system-agnostic and can be used with:
-
-- CMS platforms (WordPress, TYPO3, Drupal, Joomla, etc.)  
-- Static site generators  
-- Frontend frameworks (React, Vue, Svelte, etc.)  
-- Backend-driven applications  
-- Standalone design systems and component libraries  
+This example shows the minimal output for a plugin that only outputs feed content, so evaluation covers only the feed output. 
+The text size issue is technical (not editorial content like blog posts).
+By seeing this info website operators would combine this with other components' metadata to complete their accessibility statement or chose another plugin without issues.
 
 
 ## Specification
 
 The formal definition is provided as a JSON Schema:
 
-    schema/v1/accessibility.schema.json
+    [schema/v1/accessibility.schema.json](schema/v1/accessibility.schema.json)
 
 This schema describes the full structure of the `accessibility.json`
 metadata file, including:
